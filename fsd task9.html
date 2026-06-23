@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daily Motivation</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff9966, #ff5e62);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            width: 450px;
+            padding: 40px;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            color: #ff5e62;
+            margin-bottom: 20px;
+        }
+
+        #quote {
+            font-size: 22px;
+            color: #333;
+            min-height: 80px;
+            margin-bottom: 30px;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 16px;
+            background-color: #ff5e62;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>✨ Daily Motivation ✨</h1>
+
+    <p id="quote">
+        Believe in yourself and all that you are.
+    </p>
+
+    <button onclick="changeQuote()">
+        New Quote
+    </button>
+</div>
+
+<script>
+    const quotes = [
+        "Success is the sum of small efforts repeated daily.",
+        "Dream big and dare to fail.",
+        "Every day is a fresh beginning.",
+        "Push yourself because no one else will do it for you.",
+        "Great things never come from comfort zones."
+    ];
+
+    function changeQuote() {
+        let random = Math.floor(Math.random() * quotes.length);
+        document.getElementById("quote").textContent = quotes[random];
+    }
+</script>
+
+</body>
+</html>
