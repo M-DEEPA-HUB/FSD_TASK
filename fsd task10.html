@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Registration Form</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg,#74ebd5,#ACB6E5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container{
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            width: 350px;
+            text-align: center;
+        }
+
+        input{
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button{
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button:hover{
+            background-color: #45a049;
+        }
+
+        #message{
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Registration Form</h2>
+
+        <input type="text" id="username" placeholder="Enter your name">
+        <br>
+
+        <button id="submitBtn">Submit</button>
+
+        <p id="message"></p>
+    </div>
+
+    <script>
+        const button = document.getElementById("submitBtn");
+        const username = document.getElementById("username");
+        const message = document.getElementById("message");
+
+        button.addEventListener("click", function() {
+
+            let name = username.value.trim();
+
+            if(name === ""){
+                message.textContent = "❌ Name cannot be empty!";
+                message.style.color = "red";
+            }
+            else if(name.length < 3){
+                message.textContent = "❌ Name must contain at least 3 characters!";
+                message.style.color = "orange";
+            }
+            else{
+                message.textContent = "✅ Welcome, " + name + "!";
+                message.style.color = "green";
+            }
+
+        });
+    </script>
+
+</body>
+</html>
