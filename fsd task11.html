@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Input Validation</title>
+</head>
+<body>
+
+<h2>Text Input Validation</h2>
+
+<label>Enter Your Name:</label>
+<input type="text" id="name">
+<button onclick="validateInput()">Validate</button>
+
+<p id="message"></p>
+
+<script>
+function validateInput() {
+    let name = document.getElementById("name").value.trim();
+    let message = document.getElementById("message");
+
+    if (name === "") {
+        message.innerHTML = "Name cannot be empty.";
+        message.style.color = "red";
+    }
+    else if (!/^[A-Za-z ]+$/.test(name)) {
+        message.innerHTML = "Name should contain only letters and spaces.";
+        message.style.color = "red";
+    }
+    else {
+        message.innerHTML = "Valid input!";
+        message.style.color = "green";
+    }
+}
+</script>
+
+</body>
+</html>
